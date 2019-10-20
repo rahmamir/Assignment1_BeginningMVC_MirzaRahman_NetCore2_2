@@ -21,7 +21,7 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
             {
                 new Equipment {EquipmentID = 0, EquipmentType = EquipmentType.Laptop, Availability = true, Description = "Lenovo "},
                 new Equipment {EquipmentID = 1, EquipmentType = EquipmentType.Phone, Availability = true, Description = "Android Phone Ringke"},
-                new Equipment {EquipmentID = 2, EquipmentType = EquipmentType.Tablet, Availability = true, Description = "Samsung Tablet"}
+                new Equipment {EquipmentID = 2, EquipmentType = EquipmentType.Tablet, Availability = false, Description = "Samsung Tablet"}
             };
         }
 

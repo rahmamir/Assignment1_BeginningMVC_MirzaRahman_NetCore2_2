@@ -24,11 +24,16 @@
                 <td>@equipment.EquipmentID</td>
                 <td>@equipment.EquipmentType</td>
                 <td>@equipment.Description</td>
-                <td>@equipment.Availability</td>
+                @if (equipment.Availability)
+                { <td class="btn-success">@equipment.Availability</td> }
+                else { <td class="btn-danger">@equipment.Availability</td> }
             </tr>
         }
     </tbody>
 </table>
+<script>
+
+</script>
 
 
 
