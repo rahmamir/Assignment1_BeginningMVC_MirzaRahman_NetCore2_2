@@ -25,6 +25,8 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseStaticFiles();
+            app.UseStatusCodePages();
             app.UseMvcWithDefaultRoute();
         }
     }

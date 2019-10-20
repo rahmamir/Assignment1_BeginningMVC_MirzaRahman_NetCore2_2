@@ -46,7 +46,7 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Controllers
 
         public IActionResult EquipmentListing()
         {
-            return View();
+            return View("EquipmentListing", Repository.EquipmentList);
         }
     }
 }

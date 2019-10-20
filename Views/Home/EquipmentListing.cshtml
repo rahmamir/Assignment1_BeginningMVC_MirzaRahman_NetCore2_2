@@ -2,12 +2,12 @@
 @model IEnumerable<Equipment>
 
 @{
-    ViewData["Title"] = "EquipmentListing";
+    ViewData["Title"] = "Equipment Listing";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h1>EquipmentListing</h1>
-<table class="table">
+<table class="table table-dark">
     <thead>
         <tr>
             <th scope="col">ID</th>
@@ -17,25 +17,20 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
-        </tr>
+
+        @foreach (var equipment in Model)
+        {
+            <tr>
+                <td>@equipment.EquipmentID</td>
+                <td>@equipment.EquipmentType</td>
+                <td>@equipment.Description</td>
+                <td>@equipment.Availability</td>
+            </tr>
+        }
     </tbody>
 </table>
+
+
+
 
 

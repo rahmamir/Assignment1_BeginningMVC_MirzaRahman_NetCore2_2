@@ -19,9 +19,9 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
             _listOfRequests = new List<Request>();
             _listOfEquipment = new List<Equipment>
             {
-                new Equipment {EquipmentID = 0, Availability = true, Description = "Laptop"},
-                new Equipment {EquipmentID = 1, Availability = true, Description = "Phone"},
-                new Equipment {EquipmentID = 2, Availability = true, Description = "Tablet"}
+                new Equipment {EquipmentID = 0, EquipmentType = EquipmentType.Laptop, Availability = true, Description = "Lenovo "},
+                new Equipment {EquipmentID = 1, EquipmentType = EquipmentType.Phone, Availability = true, Description = "Android Phone Ringke"},
+                new Equipment {EquipmentID = 2, EquipmentType = EquipmentType.Tablet, Availability = true, Description = "Samsung Tablet"}
             };
         }
 
