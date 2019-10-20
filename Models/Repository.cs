@@ -7,24 +7,38 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
 {
     public static class Repository
     {
-        public static List<Request> _listOfRequests;
-        private static int ID;
+        private static List<Request> _listOfRequests;
+        private static List<Equipment> _listOfEquipment;
+        private static int GeneratedRequestID;
+        private static int GeneratedEquipmentID;
 
         static Repository()
         {
-            ID = 0;
+            GeneratedRequestID = 3;
+            GeneratedEquipmentID = 0;
             _listOfRequests = new List<Request>();
+            _listOfEquipment = new List<Equipment>
+            {
+                new Equipment {EquipmentID = 0, Availability = true, Description = "Laptop"},
+                new Equipment {EquipmentID = 1, Availability = true, Description = "Phone"},
+                new Equipment {EquipmentID = 2, Availability = true, Description = "Tablet"}
+            };
         }
 
         public static List<Request> Requests => _listOfRequests;
-
+        public static List<Equipment> EquipmentList => _listOfEquipment;
         public static void AddToRepository(Request request)
         {
-            request.ID = ID;
+            request.RequestID = GeneratedRequestID;
             _listOfRequests.Add(request);
-            ID++;
+            GeneratedRequestID++;
+        }
+        public static void AddToEquipmentList(Equipment equipment)
+        {
+            equipment.EquipmentID = GeneratedEquipmentID;
+            GeneratedEquipmentID++;
+            _listOfEquipment.Add(equipment);
         }
 
-        
     } 
 }

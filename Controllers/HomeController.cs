@@ -21,6 +21,7 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Controllers
         {
             if (request.validateProperties())//if valid form data
             {
+                Repository.AddToRepository(request);//add validated request to respository
                 request.FormErrors.Clear();//remove all previous errors
                 ViewBag.ErrorMessage = "";//do not display any errors
                 return View("Confirmation");//go to confirmation
@@ -39,6 +40,11 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Controllers
         }
 
         public IActionResult Confirmation()
+        {
+            return View();
+        }
+
+        public IActionResult EquipmentListing()
         {
             return View();
         }

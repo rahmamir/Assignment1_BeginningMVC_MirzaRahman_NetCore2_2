@@ -8,26 +8,22 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
 {
     public class Request
     {
-        public enum type
-        {
-            Laptop, Phone, Tablet, Another
-        }
         public List<String> FormErrors { get; set; }
         public string Name { get; set; }
         public String Email { get; set; }
         public String PhoneNumber { get; set; }
         public String Role { get; set; }
-        public type EquipmentType { get; set; }
+        public EquipmentType EquipmentType { get; set; }
         public String RequestDetails { get; set; }
         public int Duration { get; set; }
-        public int ID { get; set; }
+        public int RequestID { get; set; }
 
         public Request()
         {
 
         }
 
-        public Request(string name, string email, String phoneNumber, string role, type equipmentType, string requestDetails, int duration, int id)
+        public Request(string name, string email, String phoneNumber, string role, EquipmentType equipmentType, string requestDetails, int duration, int id)
         {
             Name = name;
             Email = email;
@@ -36,7 +32,7 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
             EquipmentType = equipmentType;
             RequestDetails = requestDetails;
             Duration = duration;
-            ID = id;
+            RequestID = id;
         }
 
         public bool validateProperties()
