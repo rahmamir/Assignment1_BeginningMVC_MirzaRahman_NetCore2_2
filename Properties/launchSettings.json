@@ -18,7 +18,7 @@
     "Assignment1_BeginningMVC_MirzaRahman_NetCore2_2": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:5000",
+      "applicationUrl": "http://localhost:50412",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

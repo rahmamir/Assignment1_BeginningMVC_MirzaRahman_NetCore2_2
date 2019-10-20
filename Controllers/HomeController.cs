@@ -13,5 +13,17 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Controllers
             ViewBag.Title = "FAST Equipment Tool";
             return View("HomePage");
         }
+
+        public IActionResult validateRequestForm()
+        {
+
+            return View("HomePage");
+        }
+        
+        public IActionResult RequestForm()
+        {
+            ///ViewBag.Title = "FAST Equipment Tool";
+            return View();
+        }
     }
 }

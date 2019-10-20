@@ -1,0 +1,40 @@
+﻿@using Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models;
+@model Request;
+
+@{
+
+    ViewData["Title"] = "RequestForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>RequestForm</h1>
+<form method="post" asp-action="validateRequestForm">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input class="form-control" name="Name" />
+    </div>
+    <div class="form-group">
+        <label for="name">Email:</label>
+        <input class="form-control" name="Email" /><!--MUST BE VALID-->
+    </div>
+    <div class="form-group">
+        <label for="name">Phone Number:</label>
+        <input class="form-control" name="PhoneNumber" /><!--MUST BE xxx-xxx-xxxx -->
+    </div>
+    <select class="form-control" id="Role" name="Role">
+        <option>Student</option>
+        <option>Professor</option>
+    </select>
+    <select class="form-control" asp-for="@Model.EquipmentType" asp-items="Html.GetEnumSelectList<Request.type>()" id="EquipmentType" name="EquipmentType">
+        <option selected="selected" value="">Please Select Device Type</option>
+    </select>
+    <div class="form-group">
+        <label for="name">Request Details:</label>
+        <input class="form-control" name="RequestDetails" />
+    </div>
+    <div class="form-group">
+        <label for="name">Duration:</label>
+        <input class="form-control" name="Duration" /><!--MUST BE +VE-->
+    </div>
+    <button class="btn btn-primary center-block" type="submit">Submit</button>
+</form>
