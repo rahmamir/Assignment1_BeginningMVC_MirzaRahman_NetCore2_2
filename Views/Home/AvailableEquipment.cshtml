@@ -1,0 +1,40 @@
+﻿@using Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
+@model IEnumerable<Equipment>
+
+@{
+    ViewData["Title"] = "AvailableEquipment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Available Equipment</h1>
+<h1>EquipmentListing</h1>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Availability</th>
+        </tr>
+    </thead>
+    <tbody>
+         
+        @foreach (var equipment in Model.Where(p => p.Availability==true)
+                .Select(p => p))
+        {
+            <tr>
+                <td>@equipment.EquipmentID</td>
+                <td>@equipment.EquipmentType</td>
+                <td>@equipment.Description</td>
+                @if (equipment.Availability)
+                {
+                    <td class="btn-success">@equipment.Availability</td>
+                }
+                else
+                {
+                    <td class="btn-danger">@equipment.Availability</td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
