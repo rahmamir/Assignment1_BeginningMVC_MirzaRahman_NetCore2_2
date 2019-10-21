@@ -53,5 +53,26 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Controllers
         {
             return View("AvailableEquipment", Repository.EquipmentList);
         }
+
+        public IActionResult Requests()
+        {
+            return View();
+        }
+
+        public IActionResult RequestById(int id)
+        {
+            Debug.WriteLine("Req ID = " + id);
+
+            foreach (var request in Repository.Requests)
+            {
+                if (id == request.RequestID)
+                {
+                    return Json(request.RequestDetails);
+                }
+            }
+            return NotFound();
+        }
+
+
     }
 }

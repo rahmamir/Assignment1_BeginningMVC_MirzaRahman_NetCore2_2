@@ -1,0 +1,39 @@
+﻿@using Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
+@model IEnumerable<Request>
+@{
+    ViewData["Title"] = "Requests";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Requests</h1>
+<table class="table table-dark">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Type</th>
+            <th scope="col">Description</th>
+            <th scope="col">Availability</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.EquipmentType</td>
+                <td>@request.Name</td>
+                <td>@request.Role</td>
+                <td><a asp-action="RequestById" data-content="@request.RequestID">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+
+</script>
+
+
+
+
+
+
