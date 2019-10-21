@@ -4,6 +4,9 @@
 @{
     ViewData["Title"] = "RequestForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ///Allows the creation and submission of a new request
+    ///All Entered data is validated through the controller, the Request object is then created and added to Repository
+    ///Afterwards user is redirected to confirmation page
 }
     <div class="form-group">
         <h1>Request Form</h1>
@@ -16,11 +19,11 @@
     </div>
     <div class="form-group">
         <label for="name">Email:</label>
-        <input class="form-control" name="Email" asp-for="@Model.Email"/><!--MUST BE VALID-->
+        <input class="form-control" name="Email" asp-for="@Model.Email"/>
     </div>
     <div class="form-group">
         <label for="name">Phone Number:</label>
-        <input class="form-control" name="PhoneNumber" asp-for="@Model.PhoneNumber"/><!--MUST BE xxx-xxx-xxxx -->
+        <input class="form-control" name="PhoneNumber" asp-for="@Model.PhoneNumber"/>
     </div>
     <div class="form-group">
         <label for="name">Role:</label>
@@ -40,7 +43,7 @@
     </div>
     <div class="form-group">
         <label for="name">Duration:</label>
-        <input class="form-control" name="Duration" asp-for="@Model.Duration"/><!--MUST BE +VE-->
+        <input class="form-control" name="Duration" asp-for="@Model.Duration"/>
     </div>
     <button class="btn btn-primary center-block text-center" type="submit">Submit</button>
 </form>

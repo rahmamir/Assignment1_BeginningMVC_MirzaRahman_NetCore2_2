@@ -21,7 +21,7 @@
             </thead>
             <tbody>
 
-                @foreach (var equipment in Model.Where(p => p.Availability == true)
+                @foreach (var equipment in Model.Where(p => p.Availability == true) ///only prints equipment data of available equipment
                        .Select(p => p))
                 {
                     <tr>
@@ -30,7 +30,7 @@
                         <td>@equipment.Description</td>
                         @if (equipment.Availability)
                         {
-                            <td class="btn-success">@equipment.Availability</td>
+                            <td class="btn-success">@equipment.Availability</td>///change button color, if available(Green) or not(Red)
                         }
                         else
                         {

@@ -11,13 +11,13 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index()//redirect to homepage
         {
             ViewBag.Title = "FAST Equipment Tool";
             return View("HomePage");
         }
 
-        public IActionResult validateRequestForm(Request request)
+        public IActionResult validateRequestForm(Request request)//validates form data
         {
             if (request.validateProperties())//if valid form data
             {
@@ -34,47 +34,41 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Controllers
             
         }
         
-        public IActionResult RequestForm()
+        public IActionResult RequestForm()//returns request form
         {
             return View();
         }
 
-        public IActionResult Confirmation()
+        public IActionResult Confirmation()//return confirmation page
         {
             return View();
         }
 
-        public IActionResult EquipmentListing()
+        public IActionResult EquipmentListing()//returns with list of equipment
         {
             return View("EquipmentListing", Repository.EquipmentList);
         }
 
-        public IActionResult AvailableEquipment()
+        public IActionResult AvailableEquipment()//returns with list of available equipment
         {
             return View("AvailableEquipment", Repository.EquipmentList);
         }
 
-        public IActionResult Requests()
+        public IActionResult Requests()//return all requests currently
         {
             return View("Requests", Repository.Requests);
         }
 
-        public IActionResult RequestById()
+        public IActionResult RequestDetails(int id)//returns request details of specific requestID
         {
-
-            return View("RequestDetails", 5);
-        }
-
-        public IActionResult RequestDetails(int id)
-        {
-            foreach (var item in Repository.Requests)
+            foreach (var item in Repository.Requests)//go through all requests
             {
-                if(item.RequestID == id)
+                if(item.RequestID == id)//if matched, return details
                 {
                     return View("RequestDetails", item.RequestDetails);
                 }
             }
-            return NotFound();
+            return NotFound();//request not found
         }
 
 

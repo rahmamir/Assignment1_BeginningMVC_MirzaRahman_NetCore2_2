@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Equipment Listing";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ///prints the list of all equipment, available or not
 }
 
     <div class="form-group">
@@ -21,7 +22,7 @@
             </thead>
             <tbody>
 
-                @foreach (var equipment in Model)
+                @foreach (var equipment in Model)///loops through all equipment in repository
                 {
                     <tr>
                         <td>@equipment.EquipmentID</td>
@@ -29,7 +30,7 @@
                         <td>@equipment.Description</td>
                         @if (equipment.Availability)
                         {
-                            <td class="btn-success">@equipment.Availability</td>
+                            <td class="btn-success">@equipment.Availability</td>///If Available(Green), If Not(Red)
  }
                         else
                         {

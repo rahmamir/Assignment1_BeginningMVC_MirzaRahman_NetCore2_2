@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
 {
-    public class Request
+    public class Request//object class used to store Requests, includes Name, Email, PhoneNumber, Role, EquipmentType, RequestDetails, Duration, RequestID
     {
-        public List<String> FormErrors { get; set; }
+        public List<String> FormErrors { get; set; }//property which holds all errors in making request, will not add to repository until this list is blank
         public string Name { get; set; }
         public String Email { get; set; }
         public String PhoneNumber { get; set; }
@@ -35,16 +35,16 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
             RequestID = id;
         }
 
-        public bool validateProperties()
+        public bool validateProperties()//returns true if all form data is valid
         {
             FormErrors = new List<String>();
             return (checkIfAllPropertiesEntered() && checkIfValidEmail() && 
                 checkIfValidPhoneNumber() && checkIfValidDuration());
         }
 
-        public bool checkIfAllPropertiesEntered()
+        public bool checkIfAllPropertiesEntered()//returns true if all fields are non-empty
         {
-            if(this.GetType().GetProperties().All(p => p.GetValue(this) != null))
+            if(this.GetType().GetProperties().All(p => p.GetValue(this) != null))//uses lambda expression to ensure all properties are not null
             {
                 return true;
             }
@@ -52,7 +52,7 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
             return false;
         }
 
-        public bool checkIfValidEmail()
+        public bool checkIfValidEmail()//returns true if email entered is in correct format
         {
             if(Regex.IsMatch(Email, @".+@.+.com"))
             {
@@ -62,7 +62,7 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
             return false;
         }
 
-        public bool checkIfValidPhoneNumber()
+        public bool checkIfValidPhoneNumber()//returns true if phone number is in correct format
         {
             if( Regex.IsMatch(PhoneNumber, @"[0-9][0-9][0-9]-[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]"))
             {
@@ -72,7 +72,7 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
             return false;
         }
 
-        public bool checkIfValidDuration()
+        public bool checkIfValidDuration()//returns true if duration is bigger than 0
         {
             if (Duration > 0)
             {
