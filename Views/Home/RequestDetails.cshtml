@@ -1,0 +1,16 @@
+﻿@using Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
+@using System.Diagnostics;
+@model String
+
+@{
+    ViewData["Title"] = "RequestDetails";
+ Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Request Details</h1>
+<h2>@Model</h2>
+<form class="form-control">
+    <button class="alert-success">Accept</button>
+    <button class="alert-danger">Deny</button>
+</form>
+

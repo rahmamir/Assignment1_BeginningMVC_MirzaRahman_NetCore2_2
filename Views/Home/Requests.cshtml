@@ -1,5 +1,6 @@
 ﻿@using Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
 @model IEnumerable<Request>
+
 @{
     ViewData["Title"] = "Requests";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -16,14 +17,15 @@
         </tr>
     </thead>
     <tbody>
-
         @foreach (var request in Model)
         {
             <tr>
                 <td>@request.EquipmentType</td>
                 <td>@request.Name</td>
                 <td>@request.Role</td>
-                <td><a asp-action="RequestById" data-content="@request.RequestID">Details</a></td>
+                <td>
+                    <a href="RequestDetails/@request.RequestID" >Details</a>
+                </td>
             </tr>
         }
     </tbody>

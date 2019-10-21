@@ -56,18 +56,22 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Controllers
 
         public IActionResult Requests()
         {
-            return View();
+            return View("Requests", Repository.Requests);
         }
 
-        public IActionResult RequestById(int id)
+        public IActionResult RequestById()
         {
-            Debug.WriteLine("Req ID = " + id);
 
-            foreach (var request in Repository.Requests)
+            return View("RequestDetails", 5);
+        }
+
+        public IActionResult RequestDetails(int id)
+        {
+            foreach (var item in Repository.Requests)
             {
-                if (id == request.RequestID)
+                if(item.RequestID == id)
                 {
-                    return Json(request.RequestDetails);
+                    return View("RequestDetails", item.RequestDetails);
                 }
             }
             return NotFound();

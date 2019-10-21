@@ -14,9 +14,12 @@ namespace Assignment1_BeginningMVC_MirzaRahman_NetCore2_2.Models
 
         static Repository()
         {
-            GeneratedRequestID = 3;
-            GeneratedEquipmentID = 0;
-            _listOfRequests = new List<Request>();
+            GeneratedRequestID = 10;
+            GeneratedEquipmentID = 3;
+            _listOfRequests = new List<Request>
+            {
+                new Request {RequestID = 5, Duration = 20, Email = "sd@sd.com", EquipmentType = EquipmentType.Phone, Name = "Testing", PhoneNumber = "226-600-3320", RequestDetails = "Details ZERG SWARM", Role = "Student" }
+            };
             _listOfEquipment = new List<Equipment>
             {
                 new Equipment {EquipmentID = 0, EquipmentType = EquipmentType.Laptop, Availability = true, Description = "Lenovo "},
