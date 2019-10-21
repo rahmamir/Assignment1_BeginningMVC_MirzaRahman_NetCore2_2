@@ -5,8 +5,9 @@
     ViewData["Title"] = "RequestForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>RequestForm</h1>
+    <div class="form-group">
+        <h1>Request Form</h1>
+    </div>
 <p id="ErrorMessage" class="alert-danger" name="ErrorMessage">@ViewBag.ErrorMessage</p>
 <form method="post" class="alert-primary" asp-action="validateRequestForm">
     <div class="form-group">
@@ -41,7 +42,7 @@
         <label for="name">Duration:</label>
         <input class="form-control" name="Duration" asp-for="@Model.Duration"/><!--MUST BE +VE-->
     </div>
-    <button class="btn btn-primary center-block" type="submit">Submit</button>
+    <button class="btn btn-primary center-block text-center" type="submit">Submit</button>
 </form>
 
 

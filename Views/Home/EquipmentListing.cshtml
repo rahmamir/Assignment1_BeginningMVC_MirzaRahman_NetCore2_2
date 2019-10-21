@@ -6,34 +6,42 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>EquipmentListing</h1>
-<table class="table table-dark">
-    <thead>
-        <tr>
-            <th scope="col">ID</th>
-            <th scope="col">Type</th>
-            <th scope="col">Description</th>
-            <th scope="col">Availability</th>
-        </tr>
-    </thead>
-    <tbody>
+    <div class="form-group">
+        <h1>EquipmentListing</h1>
+    </div>
+    <div class="form-group">
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Availability</th>
+                </tr>
+            </thead>
+            <tbody>
 
-        @foreach (var equipment in Model)
-        {
-            <tr>
-                <td>@equipment.EquipmentID</td>
-                <td>@equipment.EquipmentType</td>
-                <td>@equipment.Description</td>
-                @if (equipment.Availability)
-                { <td class="btn-success">@equipment.Availability</td> }
-                else { <td class="btn-danger">@equipment.Availability</td> }
-            </tr>
-        }
-    </tbody>
-</table>
-<script>
+                @foreach (var equipment in Model)
+                {
+                    <tr>
+                        <td>@equipment.EquipmentID</td>
+                        <td>@equipment.EquipmentType</td>
+                        <td>@equipment.Description</td>
+                        @if (equipment.Availability)
+                        {
+                            <td class="btn-success">@equipment.Availability</td>
+ }
+                        else
+                        {
+                            <td class="btn-danger">@equipment.Availability</td>
+}
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 
-</script>
+
 
 
 
